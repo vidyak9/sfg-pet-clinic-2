@@ -1,4 +1,4 @@
-<html xmlns:th="">
+<html xmlns:th="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" ">
 <body>
 <form>
     <th:block th:fragment="select (label, name, items)">
@@ -10,7 +10,8 @@
             <div class="col-sm-10">
                 <select th:field="*{__${name}__}">
                     <option th:each="item : ${items}" th:value="${item}"
-                            th:text="${item}">dog</option>
+                            th:text="${item}">dog
+                    </option>
                 </select>
                 <span th:if="${valid}"
                       class="glyphicon glyphicon-ok form-control-feedback"
