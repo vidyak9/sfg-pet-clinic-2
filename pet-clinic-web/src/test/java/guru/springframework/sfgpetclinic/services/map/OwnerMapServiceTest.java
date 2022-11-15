@@ -1,6 +1,7 @@
 package guru.springframework.sfgpetclinic.services.map;
 
 import guru.springframework.sfgpetclinic.model.Owner;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,14 +17,14 @@ class OwnerMapServiceTest {
     final String lastName = "Smith";
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
 
         ownerMapService = new OwnerMapService(new PetTypeMapService(),new PetMapService());
         ownerMapService.save(Owner.builder().id(ownerId).lastName(lastName).build());
     }
 
     @Test
-    void findAll() {
+    public void findAll() {
         Set<Owner> ownerSet = ownerMapService.findAll();
         assertEquals(1,ownerSet.size());
     }
